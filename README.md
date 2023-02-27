@@ -8,3 +8,10 @@ To complete this project successfully, you will need to have a basic understandi
 We encourage you to work closely with your team members, ask questions, and share ideas throughout the project. By the end of this assignment, you will have improved your typing speed, developed stronger algorithmic thinking skills, and gained valuable experience in program development and teamwork.
 
 Good luck and happy coding!
+*Deadline* : 12th March 2023
+The Assignment Consists of two parts: Individual and Group
+You will have to do the individual part all by yourself ( * 9 problems*)
+Group parts,*4problems* we will be working on it together via Github 
+All your solutions should be submitted into Github 
+We will organize our workflow using Notion workspace 
+*Organize your schedule and get ready for work*
