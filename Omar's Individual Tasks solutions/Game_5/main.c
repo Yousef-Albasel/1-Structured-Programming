@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <string.h>
 
 void rand_string(char *str, int num);
 void shuffle_characters(char *s);
