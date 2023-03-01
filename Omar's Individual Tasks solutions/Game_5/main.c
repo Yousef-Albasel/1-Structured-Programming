@@ -4,8 +4,10 @@
 #include <unistd.h>
 #include <string.h>
 
-void rand_string(char *str, int num);
+void rand_string(char *str, int len);
 void shuffle_characters(char *s);
+
+char all_chars[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 int main()
 {
@@ -13,15 +15,13 @@ int main()
     srand(time(NULL));
     int size = 20, flag = 0;
     int score_1 = 0, score_2 = 0, turn = 1;
-    char tmp[size / 2], str[size];
+    char tmp[size / 2 + 1], str[size];
+
     char screen[] = "Welcome: 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0\n";
-    rand_string(tmp, size / 2);
-    for (int i = 0; i < size / 2; i++)
-        str[i] = tmp[i];
+    rand_string(tmp, (size / 2) + 1);
+    strcpy(str, tmp);
     shuffle_characters(tmp);
-    for (int i = 0; i < size / 2; i++)
-        str[i + size / 2] = tmp[i];
-    shuffle_characters(str);
+    strcat(str, tmp);
     for (int i = 0; i < size; i++)
         printf("%c ", str[i]);
     printf("\n");
@@ -79,25 +79,12 @@ int main()
         }
     }
     if (score_1 > score_2)
-        printf("The winner is player 1\n");
+        printf("The winner is Player 1\n");
     else if (score_2 > score_1)
-        printf("The winner is player 2\n");
+        printf("The winner is Player 2\n");
     else
         printf("Tie\n");
     return 0;
-}
-
-void rand_string(char *str, int num)
-{
-    for (int i = 0; i < num; i++)
-    {
-        char ch;
-        do
-        {
-            ch = rand() % 26 + 'A';
-        } while (strchr(str, ch) != NULL);
-        str[i] = ch;
-    }
 }
 
 // Fisher Yates shuffling algorithm
@@ -112,4 +99,11 @@ void shuffle_characters(char *s)
         s[last_idx] = ch;
         last_idx--;
     }
+}
+
+void rand_string(char *s, int len)
+{
+    shuffle_characters(all_chars);
+    strncpy(s, all_chars, len - 1);
+    s[len - 1] = 0;
 }
