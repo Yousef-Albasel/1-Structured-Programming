@@ -79,9 +79,9 @@ int main()
         }
     }
     if (score_1 > score_2)
-        printf("The winner is s 1\n");
+        printf("The winner is player 1\n");
     else if (score_2 > score_1)
-        printf("The winner is s 2\n");
+        printf("The winner is player 2\n");
     else
         printf("Tie\n");
     return 0;
